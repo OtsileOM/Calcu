@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HAV-Calculator</title>
+        <style type="text/css">
+h1
+{
+text-align: center;
+
+}
+.container
+{
+  width: 800px;
+  height: 400px;
+  border: 1px solid black;
+ background-color: rgb(0, 255, 21);
+ }
+label
+{
+ display: inline;
+ width: 150px;
+ text-align: left;
+ margin-left: 20px;
+ font-size: 18px;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ font-weight: 400;
+ color: black;
+}
+.input{
+  width: 400px;
+  float: right;
+  padding: 5px 10px;
+  margin-right: 45px;
+}
+button
+{
+  height: 30px; 
+  width: 80px; 
+  background-color: red;
+  color: white;
+  border: 0px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
+ margin-left: 207px;
+}
+button:hover
+{
+  cursor: pointer;
+  color: darkred;
+}
+</style>
+<script type="text/javascript">
+
+  function calculatePoint(){
+
+   var toolName = String(document.getElementById('val1') . value);
+   var num1 = Number(document.getElementById('val2') . value);
+   var num2 = Number(document.getElementById('val3') . value);
+   var points = (num1*num1)*2;
+   var sum = points/400;
+   document.getElementById('val4'). value = String(sum);
+  }
+
+  </script>
+    </head>
+<body>
+<div class="container">
+<h1>HAV Calculator</h1>
+<form class="layout">
+    <label for="val1">tool name</label>
+    <input type="text" id="val1" name="tool_name" placeholder="e.g hand drill machine" class="input"><br><br>
+    <label for="val2">Vibration</label>
+    <input type="text" id="val2" value="0"  class="input"><br><br>
+    <label for="val3">Exposure duration/minutes</label>
+    <input type="text"  id="val3" value="0"  class="input"><br><br>
+    <label for="val4">RESult</label>
+    <input type="text" value="0"  id="val4" disabled class="input"><br><br>
+    <div class="submit">
+        <button type="button" onclick="calculatePoint()">Calculate</button>
+    </div>
+     </form>
+</div>
+</body>
+</html>
